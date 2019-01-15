@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/title_general">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:title="@string/title_hi_res_textures"
+            android:key="@string/key_hi_res_textures"
+            android:summary="@string/summary_hi_res_textures" />
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:title="Customization">
+
+        <ListPreference
+            android:defaultValue="Mars"
+            android:title="@string/title_select_planet"
+            android:entries="@array/planets_available"
+            android:entryValues="@array/planets_available"
+            android:key="@string/key_selected_planet"
+            android:summary="@string/summary_select_planet" />
+        <ListPreference
+            android:defaultValue="Mid"
+            android:title="@string/title_select_animation"
+            android:entries="@array/animations_available"
+            android:entryValues="@array/animations_available"
+            android:key="@string/key_select_animation"
+            android:summary="@string/summary_select_animation" />
+        <ListPreference
+            android:defaultValue="30s"
+            android:title="@string/title_revolve_time"
+            android:entries="@array/revolve_times"
+            android:entryValues="@array/revolve_times"
+            android:key="@string/key_revolve_time"
+            android:summary="@string/summary_revolve_time" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/title_advanced_settings">
+
+        <EditTextPreference
+            android:key="@string/key_over_draw"
+            android:title="@string/title_over_draw"
+            android:summary="@string/summary_over_draw"
+            android:numeric="integer"
+            />
+
+        <EditTextPreference
+            android:key="@string/key_offset_y"
+            android:title="@string/title_offset_y"
+            android:summary="@string/summary_offset_y"
+            android:numeric="integer"
+            />
+
+        <Preference
+            android:key="@string/key_reset_advanced"
+            android:title="@string/title_reset_advanced"
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/title_about">
+
+        <Preference
+            android:title="Developed by Asdev"
+            android:summary="Copyright © 2017"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,48 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.asdev.planetpaper.wallpaper">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:fullBackupContent="false">
+
+        <service android:name=".PlanetPaperWallpaperService"
+            android:enabled="true"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_WALLPAPER">
+
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+            </intent-filter>
+
+            <meta-data android:name="android.service.wallpaper"
+                android:resource="@xml/wallpaper_desc" />
+
+        </service>
+
+        <activity android:name=".WallpaperSettingsActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".SetWallpaperActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" />
+
+        <activity android:name=".SetWallpaperActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>
